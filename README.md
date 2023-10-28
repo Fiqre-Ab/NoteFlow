@@ -47,7 +47,7 @@ Contributions are welcome! If you would like to contribute to the project, pleas
 
 To run tests, use the following command:
 
-```bash
+
 npm test
 
 ## License
