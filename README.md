@@ -54,6 +54,11 @@ npm test
 
 This project is licensed under the MIT license. [View the full license here](LICENSE).
 
+MIT License
+
+Copyright (c) [Fiqre]
+
 ## GitHub Repository
 
-You can find the project on [GitHub](https://github.com/Fiqre-Ab/NoteFlow).
+You can find the project on [@Fiqre-Ab](https://github.com/Fiqre-Ab/NoteFlow).
+
