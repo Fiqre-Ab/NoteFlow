@@ -3,9 +3,14 @@
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
+
 ## Description
 
 The Note Flow is a web application that allows users to create, save, and manage notes. It provides a simple and intuitive interface for keeping track of important information.
+
+## Video Demo
+
+[![Click to play video](./public/assets/image/Screenshot%202023-10-27%20200324.png)](https://drive.google.com/uc?export=download&id=1hfpcD1V3IwTcCJtDVJMsxTyr4g3wM0WI)
 
 ## Table of Contents
 
