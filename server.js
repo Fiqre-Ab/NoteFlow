@@ -32,6 +32,10 @@ app.get("/api/notes", (req, res) => {
   res.json(notes);
 });
 
+app.get("*", (req, res) => {
+  res.status(404).send("404 Page Not Found");
+});
+
 app.post("/api/notes", (req, res) => {
   const newNote = req.body;
   newNote.id = notes.length + 1;
