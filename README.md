@@ -1,5 +1,9 @@
 # Note FLOW
 
+## Deployment
+
+To access the deployed version of this project, click [here](https://morning-wave-57359-f028f2740766.herokuapp.com/notes?/).
+
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
