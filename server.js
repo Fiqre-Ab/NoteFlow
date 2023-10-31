@@ -2,6 +2,7 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
+const { v4: uuidv4 } = require("uuid"); // Import the uuid library
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,6 +15,7 @@ const dbPath = path.join(__dirname, "db", "db.json");
 let notes = [];
 
 try {
+  // Synchronously read a file
   const data = fs.readFileSync(dbPath, "utf8");
   notes = JSON.parse(data);
 } catch (err) {
@@ -38,7 +40,7 @@ app.get("*", (req, res) => {
 
 app.post("/api/notes", (req, res) => {
   const newNote = req.body;
-  newNote.id = notes.length + 1;
+  newNote.id = uuidv4(); // Use uuid to generate a unique ID for the note
   notes.push(newNote);
 
   fs.writeFile(dbPath, JSON.stringify(notes, null, 2), (err) => {
@@ -49,9 +51,8 @@ app.post("/api/notes", (req, res) => {
     res.json(newNote);
   });
 });
-
 app.delete("/api/notes/:note_id", (req, res) => {
-  const noteId = parseInt(req.params.note_id);
+  const noteId = req.params.note_id; // No need to parse, keep it as a string
   notes = notes.filter((note) => note.id !== noteId);
 
   fs.writeFile(dbPath, JSON.stringify(notes, null, 2), (err) => {
@@ -62,6 +63,7 @@ app.delete("/api/notes/:note_id", (req, res) => {
     res.json({ message: "Note deleted" });
   });
 });
+
 
 app.listen(PORT, () => {
   console.log(`App listening on http://localhost:${PORT}`);
